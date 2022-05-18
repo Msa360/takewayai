@@ -9,7 +9,16 @@
 </head>
 <body>
     
-    <canvas id="myCanvas"></canvas>
+    <div id="verticalButtons">
+        <button onclick="save()">save</button>
+        <button onclick="window.location.reload()">refresh</button>
+        <button onclick="discard()">delete</button>
+    </div>
+
+    <canvas id="carCanvas"></canvas>
+    <canvas id="networkCanvas"></canvas>
+    <script src="visualizer.js"></script>
+    <script src="network.js"></script>
     <script src="sensor.js"></script>
     <script src="utils.js"></script>
     <script src="road.js"></script>
