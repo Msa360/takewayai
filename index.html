@@ -6,13 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z44C34WH7P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z44C34WH7P');
+    </script>
+
 </head>
 <body>
     
+    <form action="#" onsubmit="changeParams()">
+        <label for="varN">Number of cars</label>
+        <input id="varN" type="text" value="">
+        <label for="varM">Mutation rate</label>
+        <input type="text" id="varM">
+        <input type="submit" title="submit" value="submit">
+    </form>
     <div id="verticalButtons">
-        <button onclick="save()">save</button>
-        <button onclick="window.location.reload()">refresh</button>
-        <button onclick="discard()">delete</button>
+        <button style="font-size: 25px;" onclick="save()" title="save the model of the best car in local storage">save</button>
+        <button id="refresh" onclick="window.location.reload()" title="refresh the page to restart the simulation">refresh</button>
+        <button style="font-size: 25px;" onclick="discard()" title="delete the current simulation info">delete</button>
     </div>
 
     <canvas id="carCanvas"></canvas>
