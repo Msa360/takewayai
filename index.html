@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Takeaway AI</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z44C34WH7P"></script>
@@ -16,22 +16,24 @@
 
         gtag('config', 'G-Z44C34WH7P');
     </script>
+    <!-- end google analytics -->
 
 </head>
 <body>
-    
+    <div id="side-menu">
     <form action="#" onsubmit="changeParams()">
         <label for="varN">Number of cars</label>
-        <input id="varN" type="text" value="">
+        <input id="varN" type="number" min="1" max="10000" value="">
         <label for="varM">Mutation rate</label>
-        <input type="text" id="varM">
+        <input id="varM" type="number" min="0" max="4" step="0.01" value="">
         <input type="submit" title="submit" value="submit">
     </form>
     <div id="verticalButtons">
         <button style="font-size: 25px;" onclick="save()" title="save the model of the best car in local storage">save</button>
-        <button id="refresh" onclick="window.location.reload()" title="refresh the page to restart the simulation">refresh</button>
+        <button id="refresh" style="font-size: 25px;" onclick="window.location.reload()" title="refresh the page to restart the simulation">refresh</button>
         <button style="font-size: 25px;" onclick="discard()" title="delete the current simulation info">delete</button>
     </div>
+    </div>  
 
     <canvas id="carCanvas"></canvas>
     <canvas id="networkCanvas"></canvas>

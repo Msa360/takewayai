@@ -7,9 +7,17 @@ body {
     align-items: center;
 }
 
+#side-menu {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
 #verticalButtons {
     display: flex;
     flex-direction: column;
+    font-size: 25px;
 }
 
 button {
@@ -25,6 +33,11 @@ button:hover {
 }
 button:active {
     background: rgb(0, 115, 255);
+}
+
+#refresh {
+    font-size: 25px;
+    
 }
 
 #networkCanvas {
