@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Takeaway AI</title>
+    <meta name="desccription" content="AI car simulation">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z44C34WH7P"></script>
@@ -20,23 +21,33 @@
 
 </head>
 <body>
+    <!-- start main menu -->
     <div id="side-menu">
     <form action="#" onsubmit="changeParams()">
         <label for="varN">Number of cars</label>
         <input id="varN" type="number" min="1" max="10000" value="">
         <label for="varM">Mutation rate</label>
         <input id="varM" type="number" min="0" max="4" step="0.01" value="">
-        <input type="submit" title="submit" value="submit">
+        <input type="submit" value="apply" style="cursor: pointer;">
     </form>
     <div id="verticalButtons">
-        <button style="font-size: 25px;" onclick="save()" title="save the model of the best car in local storage">save</button>
-        <button id="refresh" style="font-size: 25px;" onclick="window.location.reload()" title="refresh the page to restart the simulation">refresh</button>
-        <button style="font-size: 25px;" onclick="discard()" title="delete the current simulation info">delete</button>
+        <button id="save-btn" onclick="save()" title="save the info of the best car">save</button>
+        <button id="refresh-btn" onclick="window.location.reload()" title="refresh the page to restart the simulation">refresh</button>
+        <button id="delete-btn" onclick="discard()" title="delete the current simulation info">delete</button>
     </div>
+    <p class="info-para">"save" will save the neural network of the current furthermost car, and this car will use to generate the next generation of cars</p>
+    <p class="info-para">"refresh" will reload the page and restart the simulation with a new generation descending from the latest saved car</p>
+    <p class="info-para">"delete" will delete from local storage the currently saved car and the simulation will start back to square one</p>
+    <p class="info-para">"Number of cars" is the number of ai-controlled blue cars</p>
+    <p class="info-para">"Mutation rate" controls the amount of differences that each generation will have compared to the currently saved best car; if the mutation rate is higher, every generation will differ more</p>
+
     </div>  
+    
+    <!-- end main menu -->
 
     <canvas id="carCanvas"></canvas>
     <canvas id="networkCanvas"></canvas>
+    <script src="globalvar.js"></script>
     <script src="visualizer.js"></script>
     <script src="network.js"></script>
     <script src="sensor.js"></script>
@@ -45,5 +56,6 @@
     <script src="controls.js"></script>
     <script src="car.js"></script>
     <script src="main.js"></script>
+    
 </body>
 </html>

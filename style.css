@@ -5,6 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #side-menu {
@@ -12,12 +13,17 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    width: 30%;
+    margin-right: 20px;
 }
 
 #verticalButtons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 25px;
+    margin: 10px;
 }
 
 button {
@@ -28,16 +34,30 @@ button {
     cursor: pointer;
 }
 
+#save-btn {
+    font-size: 25px; 
+    background-color: rgb(122, 255, 255);
+}
+#refresh-btn {
+    font-size: 25px;
+    background-color: rgb(126, 255, 146);
+}
+#delete-btn {
+    font-size: 25px; 
+    background-color: rgb(255, 131, 131);
+}
 button:hover {
-    background: rgb(116, 179, 255);
+    background-color: rgb(116, 179, 255);
 }
 button:active {
-    background: rgb(0, 115, 255);
+    background-color: rgb(0, 115, 255);
 }
 
-#refresh {
-    font-size: 25px;
-    
+.info-para {
+    background-color: rgb(234, 234, 234); 
+    padding: 8px; 
+    width: 100%;
+    border-radius: 5px;
 }
 
 #networkCanvas {
